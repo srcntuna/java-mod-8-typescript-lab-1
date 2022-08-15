@@ -1,3 +1,7 @@
+var button = document.getElementById('buttonPrepend') as HTMLButtonElement;
+var actualText = document.getElementById('actualText') as HTMLInputElement;
+var actualNumber = document.getElementById('actualNumber') as HTMLInputElement;
+
 function prepend(numSpaces: number, inputString: string): string {
   let result: string = '';
   let emptySpace: string = ' ';
@@ -10,6 +14,11 @@ function prepend(numSpaces: number, inputString: string): string {
   // your code here
 }
 
-const result: string = prepend(3, 'Sercan');
+button.addEventListener('click', () => {
 
-console.log(result);
+  var inputText: string = actualText.value;
+  var inputNum: number = parseInt(actualNumber.value);
+
+  const result = prepend(inputNum, inputText);
+  console.log(result);
+});
